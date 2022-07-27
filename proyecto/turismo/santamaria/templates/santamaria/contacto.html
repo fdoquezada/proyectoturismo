@@ -1,0 +1,34 @@
+{% extends 'santamaria/base.html'%}
+{% load static %}
+
+{% block js %}
+
+{% endblock %}
+
+
+
+{% block css %}
+
+
+{% endblock %}
+
+
+{% block content %} 
+
+    <form action="/enviarcontacto" method="post">
+        Nombre:
+        <input type="text" name="nombre" id="" placeholder="Nombre">
+        <br><br>
+        email:
+        <input type="email" name="correo" id="" placeholder="Email">
+        <br><br>
+        Comentario:
+        <br>
+        <textarea name="cometario" id="" cols="50" rows="10" placeholder="Comentario"></textarea>
+        <br><br>
+        <input type="submit" value="Enviar">
+    </form>
+</html>
+
+
+{% endblock %}
