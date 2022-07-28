@@ -14,21 +14,40 @@
 
 
 {% block content %} 
+{% load crispy_forms_tags%}
+<div class="row">
+    <div class="col-12 cold-m6 offset-md-3">
+        <div class="card">
+            <div "card-body">
+                <h1> Contactanos</h1>
+                <hr>
+                <form action="" class "" method="post">
+    
+                    {% csrf_token %}    
+        
+        
+        
+                    {{ form | crispy}}
+        
+                    <br>
+        
+                    <div class="d-flex justify-content-end">
+                        <input type="reset" id="btncancelar" class="btn btn-secondary">
+                        &nbsp;
+                        <button type="submit" id="btnEnviar" class="btn btn-primary">Enviar</button>
+                    </div>
+                </form>
+            </div>        
+  
+                
+        </div>  
+  
+    </div>
+</div>    
 
-    <form action="/enviarcontacto" method="post">
-        Nombre:
-        <input type="text" name="nombre" id="" placeholder="Nombre">
-        <br><br>
-        email:
-        <input type="email" name="correo" id="" placeholder="Email">
-        <br><br>
-        Comentario:
-        <br>
-        <textarea name="cometario" id="" cols="50" rows="10" placeholder="Comentario"></textarea>
-        <br><br>
-        <input type="submit" value="Enviar">
-    </form>
-</html>
+{{message}}
 
+<table table id="tablacontactos">
 
+</table>
 {% endblock %}
