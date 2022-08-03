@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth import login
 from django.conf import settings
 from django.conf.urls.static import static #importacion de carpeta estatic para subie imagenes
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('santamaria.urls')),
+    path('account/', include('django.contrib.auth.urls')),
 ]
 
 if settings.DEBUG:
